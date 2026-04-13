@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "Weather": {
+      "version": "1.0.0",
+      "installedAt": 1776069591011
+    },
+    "Github": {
+      "version": "1.0.0",
+      "installedAt": 1776069595988
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "3dc033d0-73d4-4e4a-9517-d55bd23517fa",
-    "updatedAt": 1776069325678,
+    "updatedAt": 1776071250533,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -228,13 +228,13 @@
       "version": 0
     },
     "status": "done",
-    "startedAt": 1776069319493,
+    "startedAt": 1776071248257,
     "modelProvider": "vllm",
     "model": "qwen3.5-9b",
     "contextTokens": 128000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776069319484,
+      "generatedAt": 1776071248249,
       "sessionId": "3dc033d0-73d4-4e4a-9517-d55bd23517fa",
       "sessionKey": "agent:main:main",
       "provider": "vllm",
@@ -254,9 +254,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 27988,
-        "projectContextChars": 13453,
-        "nonProjectContextChars": 14535
+        "chars": 27170,
+        "projectContextChars": 12645,
+        "nonProjectContextChars": 14525
       },
       "injectedWorkspaceFiles": [
         {
@@ -271,8 +271,8 @@
           "name": "SOUL.md",
           "path": "/home/zigaa/.openclaw/workspace/SOUL.md",
           "missing": false,
-          "rawChars": 1738,
-          "injectedChars": 1738,
+          "rawChars": 752,
+          "injectedChars": 752,
           "truncated": false
         },
         {
@@ -287,16 +287,16 @@
           "name": "IDENTITY.md",
           "path": "/home/zigaa/.openclaw/workspace/IDENTITY.md",
           "missing": false,
-          "rawChars": 633,
-          "injectedChars": 633,
+          "rawChars": 557,
+          "injectedChars": 557,
           "truncated": false
         },
         {
           "name": "USER.md",
           "path": "/home/zigaa/.openclaw/workspace/USER.md",
           "missing": false,
-          "rawChars": 474,
-          "injectedChars": 474,
+          "rawChars": 728,
+          "injectedChars": 728,
           "truncated": false
         },
         {
@@ -483,12 +483,12 @@
     "authProfileOverride": "vllm:default",
     "authProfileOverrideSource": "auto",
     "authProfileOverrideCompactionCount": 0,
-    "endedAt": 1776069325559,
-    "runtimeMs": 6066
+    "endedAt": 1776071250413,
+    "runtimeMs": 2156
   },
   "agent:main:feishu:direct:ou_4ca3e04f673b584cabb0c9530ba6092c": {
     "sessionId": "a0335127-4230-4fbe-81d7-c1e1263e5d18",
-    "updatedAt": 1776070814730,
+    "updatedAt": 1776071308582,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -722,13 +722,13 @@
       "version": 0
     },
     "status": "running",
-    "startedAt": 1776070814715,
+    "startedAt": 1776071308563,
     "modelProvider": "deepseek",
     "model": "deepseek-chat",
     "contextTokens": 131072,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776060370238,
+      "generatedAt": 1776070814705,
       "sessionId": "a0335127-4230-4fbe-81d7-c1e1263e5d18",
       "sessionKey": "agent:main:feishu:direct:ou_4ca3e04f673b584cabb0c9530ba6092c",
       "provider": "deepseek",
@@ -748,8 +748,8 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 28093,
-        "projectContextChars": 13453,
+        "chars": 27285,
+        "projectContextChars": 12645,
         "nonProjectContextChars": 14640
       },
       "injectedWorkspaceFiles": [
@@ -765,8 +765,8 @@
           "name": "SOUL.md",
           "path": "/home/zigaa/.openclaw/workspace/SOUL.md",
           "missing": false,
-          "rawChars": 1738,
-          "injectedChars": 1738,
+          "rawChars": 752,
+          "injectedChars": 752,
           "truncated": false
         },
         {
@@ -781,16 +781,16 @@
           "name": "IDENTITY.md",
           "path": "/home/zigaa/.openclaw/workspace/IDENTITY.md",
           "missing": false,
-          "rawChars": 633,
-          "injectedChars": 633,
+          "rawChars": 557,
+          "injectedChars": 557,
           "truncated": false
         },
         {
           "name": "USER.md",
           "path": "/home/zigaa/.openclaw/workspace/USER.md",
           "missing": false,
-          "rawChars": 474,
-          "injectedChars": 474,
+          "rawChars": 728,
+          "injectedChars": 728,
           "truncated": false
         },
         {
@@ -968,12 +968,12 @@
         ]
       }
     },
-    "inputTokens": 270,
-    "outputTokens": 75,
-    "cacheRead": 13376,
+    "inputTokens": 18071,
+    "outputTokens": 1590,
+    "cacheRead": 18688,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0.0077989520000000005,
-    "totalTokens": 13646,
+    "estimatedCostUsd": 0.020411496,
+    "totalTokens": 18792,
     "totalTokensFresh": true,
     "providerOverride": "deepseek",
     "modelOverride": "deepseek-chat",
