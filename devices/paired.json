@@ -3,8 +3,8 @@
     "deviceId": "b9499527f7556576aaf0bee76c93f228d6f0475e6978d070a17f6c503bf34f99",
     "publicKey": "u1Qz_gFTxRUa6FXaE5Uk9w_dQEs-q36VsSGuZki_A1E",
     "platform": "linux",
-    "clientId": "gateway-client",
-    "clientMode": "backend",
+    "clientId": "cli",
+    "clientMode": "cli",
     "role": "operator",
     "roles": [
       "operator"
@@ -125,5 +125,41 @@
     },
     "createdAtMs": 1776047527269,
     "approvedAtMs": 1776047527269
+  },
+  "42a7db3ff8a6b92f2008e6b6e3c9ee38f78994bb96bb95e694f4a22129b2d88a": {
+    "deviceId": "42a7db3ff8a6b92f2008e6b6e3c9ee38f78994bb96bb95e694f4a22129b2d88a",
+    "publicKey": "Bh_MKE4gdEjLT8BKfRkNrX0dERFdcjkr-Zg9iY_2AC4",
+    "displayName": "OpenClaw Web Backend",
+    "platform": "linux",
+    "clientId": "cli",
+    "clientMode": "cli",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.read",
+      "operator.write",
+      "operator.admin"
+    ],
+    "approvedScopes": [
+      "operator.read",
+      "operator.write",
+      "operator.admin"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "qYOXPpksj9ki209QN0mEyuVQHX9IIRHrntGemLiRwA8",
+        "role": "operator",
+        "scopes": [
+          "operator.admin",
+          "operator.read",
+          "operator.write"
+        ],
+        "createdAtMs": 1776074988094
+      }
+    },
+    "createdAtMs": 1776074988093,
+    "approvedAtMs": 1776074988093
   }
 }

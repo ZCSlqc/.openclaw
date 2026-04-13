@@ -5,10 +5,14 @@
       "models": {
         "deepseek/deepseek-chat": {
           "alias": "DeepSeek"
-        }
+        },
+        "vllm/qwen3.5-9b": {}
       },
       "model": {
-        "primary": "deepseek/deepseek-chat"
+        "primary": "vllm/qwen3.5-9b",
+        "fallbacks": [
+          "deepseek/deepseek-chat"
+        ]
       }
     },
     "list": [
@@ -111,6 +115,30 @@
             "api": "openai-completions"
           }
         ]
+      },
+      "vllm": {
+        "baseUrl": "http://localhost:11435/v1",
+        "api": "openai-completions",
+        "apiKey": "VLLM_API_KEY",
+        "models": [
+          {
+            "id": "qwen3.5-9b",
+            "name": "qwen3.5-9b",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          }
+        ]
       }
     }
   },
@@ -119,26 +147,33 @@
       "deepseek:default": {
         "provider": "deepseek",
         "mode": "api_key"
+      },
+      "vllm:default": {
+        "provider": "vllm",
+        "mode": "api_key"
       }
     }
   },
   "channels": {
     "feishu": {
       "enabled": true,
-      "defaultAccount": "feishu_main",
-      "groupPolicy": "open",
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "dmPolicy": "open",
       "accounts": {
-        "feishu_main": {
+        "default": {
           "appId": "cli_a92dba56b339dbc6",
           "appSecret": "4Rz5rxSSSkOBPSYQkJ69agIpK0OJ4k2A",
-          "name": "hanli bot"
+          "name": "hanli bot",
+          "groupPolicy": "open",
+          "requireMention": true
         },
         "feishu_zcs": {
           "appId": "cli_a92d5d6b69395cd6",
           "appSecret": "JfbVI1GUPDsioTOtPzHSffuFKtg0nYYm",
           "name": "zcs bot",
-          "groupPolicy": "allowlist",
-          "allowFrom": []
+          "groupPolicy": "open",
+          "requireMention": true
         }
       }
     }
@@ -155,18 +190,21 @@
       },
       "deepseek": {
         "enabled": true
+      },
+      "vllm": {
+        "enabled": true
       }
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-13T02:02:59.918Z",
+    "lastRunAt": "2026-04-13T05:56:44.386Z",
     "lastRunVersion": "2026.4.9",
-    "lastRunCommand": "onboard",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
     "lastTouchedVersion": "2026.4.9",
-    "lastTouchedAt": "2026-04-13T03:20:47.378Z"
+    "lastTouchedAt": "2026-04-13T05:56:44.831Z"
   },
   "bindings": [
     {
@@ -174,7 +212,7 @@
       "agentId": "main",
       "match": {
         "channel": "feishu",
-        "accountId": "feishu_main"
+        "accountId": "default"
       }
     },
     {

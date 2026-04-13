@@ -126,7 +126,8 @@
             "name": "qwen3.5-9b",
             "reasoning": false,
             "input": [
-              "text"
+              "text",
+              "image"
             ],
             "cost": {
               "input": 0,
@@ -156,24 +157,28 @@
   "channels": {
     "feishu": {
       "enabled": true,
-      "defaultAccount": "feishu_main",
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "dmPolicy": "open",
       "accounts": {
-        "feishu_main": {
+        "default": {
           "appId": "cli_a92dba56b339dbc6",
           "appSecret": "4Rz5rxSSSkOBPSYQkJ69agIpK0OJ4k2A",
-          "name": "hanli bot"
+          "name": "hanli bot",
+          "groupPolicy": "open",
+          "requireMention": true
         },
         "feishu_zcs": {
           "appId": "cli_a92d5d6b69395cd6",
           "appSecret": "JfbVI1GUPDsioTOtPzHSffuFKtg0nYYm",
           "name": "zcs bot",
-          "groupPolicy": "allowlist",
-          "allowFrom": []
-        },
-        "default": {
-          "groupPolicy": "open"
+          "groupPolicy": "open",
+          "requireMention": true
         }
-      }
+      },
+      "allowFrom": [
+        "*"
+      ]
     }
   },
   "plugins": {
@@ -188,18 +193,21 @@
       },
       "deepseek": {
         "enabled": true
+      },
+      "vllm": {
+        "enabled": true
       }
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-13T03:37:48.171Z",
+    "lastRunAt": "2026-04-13T06:06:26.905Z",
     "lastRunVersion": "2026.4.9",
-    "lastRunCommand": "configure",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
     "lastTouchedVersion": "2026.4.9",
-    "lastTouchedAt": "2026-04-13T03:37:48.377Z"
+    "lastTouchedAt": "2026-04-13T06:06:27.158Z"
   },
   "bindings": [
     {
@@ -207,7 +215,7 @@
       "agentId": "main",
       "match": {
         "channel": "feishu",
-        "accountId": "feishu_main"
+        "accountId": "default"
       }
     },
     {

@@ -59,7 +59,7 @@
     "dmScope": "per-channel-peer"
   },
   "tools": {
-    "profile": "coding",
+    "profile": "full",
     "web": {
       "search": {
         "provider": "tavily",
@@ -175,7 +175,10 @@
           "groupPolicy": "open",
           "requireMention": true
         }
-      }
+      },
+      "allowFrom": [
+        "*"
+      ]
     }
   },
   "plugins": {
@@ -197,14 +200,14 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-13T05:56:44.386Z",
+    "lastRunAt": "2026-04-13T06:06:26.905Z",
     "lastRunVersion": "2026.4.9",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
     "lastTouchedVersion": "2026.4.9",
-    "lastTouchedAt": "2026-04-13T05:56:44.831Z"
+    "lastTouchedAt": "2026-04-13T11:08:25.197Z"
   },
   "bindings": [
     {

@@ -23,7 +23,10 @@
         "id": "zcs",
         "name": "zcs",
         "workspace": "/home/zigaa/.openclaw/workspace-zcs",
-        "agentDir": "/home/zigaa/.openclaw/agents/zcs/agent"
+        "agentDir": "/home/zigaa/.openclaw/agents/zcs/agent",
+        "tools": {
+          "profile": "coding"
+        }
       }
     ]
   },
@@ -59,7 +62,7 @@
     "dmScope": "per-channel-peer"
   },
   "tools": {
-    "profile": "coding",
+    "profile": "full",
     "web": {
       "search": {
         "provider": "tavily",
@@ -207,7 +210,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.4.9",
-    "lastTouchedAt": "2026-04-13T06:06:27.158Z"
+    "lastTouchedAt": "2026-04-13T11:13:03.673Z"
   },
   "bindings": [
     {
