@@ -1,19 +1,20 @@
 {
   "agent:main:main": {
     "sessionId": "3dc033d0-73d4-4e4a-9517-d55bd23517fa",
-    "updatedAt": 1776071250533,
+    "updatedAt": 1776071504141,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
     "deliveryContext": {
-      "to": "heartbeat"
+      "channel": "webchat"
     },
-    "lastTo": "heartbeat",
     "origin": {
       "label": "heartbeat",
-      "provider": "heartbeat",
+      "provider": "webchat",
       "from": "heartbeat",
-      "to": "heartbeat"
+      "to": "heartbeat",
+      "surface": "webchat",
+      "chatType": "direct"
     },
     "sessionFile": "/home/zigaa/.openclaw/agents/main/sessions/3dc033d0-73d4-4e4a-9517-d55bd23517fa.jsonl",
     "compactionCount": 0,
@@ -228,13 +229,13 @@
       "version": 0
     },
     "status": "done",
-    "startedAt": 1776071248257,
+    "startedAt": 1776071501677,
     "modelProvider": "vllm",
     "model": "qwen3.5-9b",
     "contextTokens": 128000,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776071248249,
+      "generatedAt": 1776071501668,
       "sessionId": "3dc033d0-73d4-4e4a-9517-d55bd23517fa",
       "sessionKey": "agent:main:main",
       "provider": "vllm",
@@ -254,9 +255,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 27170,
+        "chars": 27562,
         "projectContextChars": 12645,
-        "nonProjectContextChars": 14525
+        "nonProjectContextChars": 14917
       },
       "injectedWorkspaceFiles": [
         {
@@ -367,7 +368,7 @@
       },
       "tools": {
         "listChars": 0,
-        "schemaChars": 7215,
+        "schemaChars": 13915,
         "entries": [
           {
             "name": "read",
@@ -389,15 +390,21 @@
           },
           {
             "name": "exec",
-            "summaryChars": 446,
+            "summaryChars": 539,
             "schemaChars": 1098,
             "propertiesCount": 12
           },
           {
             "name": "process",
-            "summaryChars": 322,
+            "summaryChars": 416,
             "schemaChars": 961,
             "propertiesCount": 12
+          },
+          {
+            "name": "cron",
+            "summaryChars": 3726,
+            "schemaChars": 6700,
+            "propertiesCount": 13
           },
           {
             "name": "sessions_list",
@@ -483,12 +490,13 @@
     "authProfileOverride": "vllm:default",
     "authProfileOverrideSource": "auto",
     "authProfileOverrideCompactionCount": 0,
-    "endedAt": 1776071250413,
-    "runtimeMs": 2156
+    "lastChannel": "webchat",
+    "endedAt": 1776071504024,
+    "runtimeMs": 2347
   },
   "agent:main:feishu:direct:ou_4ca3e04f673b584cabb0c9530ba6092c": {
     "sessionId": "a0335127-4230-4fbe-81d7-c1e1263e5d18",
-    "updatedAt": 1776071308582,
+    "updatedAt": 1776071852543,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -722,17 +730,14 @@
       "version": 0
     },
     "status": "running",
-    "startedAt": 1776071308563,
-    "modelProvider": "deepseek",
-    "model": "deepseek-chat",
-    "contextTokens": 131072,
+    "startedAt": 1776071852521,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776070814705,
+      "generatedAt": 1776071737358,
       "sessionId": "a0335127-4230-4fbe-81d7-c1e1263e5d18",
       "sessionKey": "agent:main:feishu:direct:ou_4ca3e04f673b584cabb0c9530ba6092c",
-      "provider": "deepseek",
-      "model": "deepseek-chat",
+      "provider": "vllm",
+      "model": "qwen3.5-9b",
       "workspaceDir": "/home/zigaa/.openclaw/workspace",
       "bootstrapMaxChars": 20000,
       "bootstrapTotalMaxChars": 150000,
@@ -748,9 +753,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 27285,
+        "chars": 27268,
         "projectContextChars": 12645,
-        "nonProjectContextChars": 14640
+        "nonProjectContextChars": 14623
       },
       "injectedWorkspaceFiles": [
         {
@@ -949,7 +954,7 @@
           },
           {
             "name": "image",
-            "summaryChars": 201,
+            "summaryChars": 260,
             "schemaChars": 342,
             "propertiesCount": 6
           },
@@ -968,19 +973,19 @@
         ]
       }
     },
-    "inputTokens": 18071,
-    "outputTokens": 1590,
-    "cacheRead": 18688,
+    "inputTokens": 260,
+    "outputTokens": 38,
+    "cacheRead": 21248,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0.020411496,
-    "totalTokens": 18792,
+    "estimatedCostUsd": 0.029361416,
     "totalTokensFresh": true,
-    "providerOverride": "deepseek",
-    "modelOverride": "deepseek-chat",
-    "modelOverrideSource": "auto",
-    "authProfileOverride": "deepseek:default",
+    "authProfileOverride": "vllm:default",
     "authProfileOverrideSource": "auto",
-    "authProfileOverrideCompactionCount": 0
+    "authProfileOverrideCompactionCount": 0,
+    "modelProvider": "vllm",
+    "model": "qwen3.5-9b",
+    "contextTokens": 128000,
+    "totalTokens": 21508
   },
   "agent:main:feishu:group:oc_948d9a67d6185924de6f1d74b8382935": {
     "sessionId": "017d9988-8c65-4bae-a0be-284fcb8190b9",
