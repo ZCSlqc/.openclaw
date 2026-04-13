@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "profiles": {
+    "deepseek:default": {
+      "type": "api_key",
+      "provider": "deepseek",
+      "key": "sk-f3962c1d3c0546f394178ddc15c7f238"
+    },
+    "vllm:default": {
+      "type": "api_key",
+      "provider": "vllm",
+      "key": "sk-123456789abcdef"
+    }
+  }
+}

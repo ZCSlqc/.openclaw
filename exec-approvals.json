@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "socket": {
+    "path": "/home/zigaa/.openclaw/exec-approvals.sock",
+    "token": "urkqndurIiv2G-Uyh_Q9M6Kj31G7Vril"
+  },
+  "defaults": {},
+  "agents": {}
+}

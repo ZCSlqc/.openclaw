@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "lastGood": {
+    "deepseek": "deepseek:default",
+    "vllm": "vllm:default"
+  },
+  "usageStats": {
+    "deepseek:default": {
+      "errorCount": 0,
+      "lastUsed": 1776060374300
+    },
+    "vllm:default": {
+      "errorCount": 0,
+      "lastUsed": 1776070489958
+    }
+  }
+}
