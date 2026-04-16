@@ -8,6 +8,18 @@
     "Github": {
       "version": "1.0.0",
       "installedAt": 1776069595988
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1776311701600
+    },
+    "self-improving-agent": {
+      "version": "3.0.16",
+      "installedAt": 1776312068117
+    },
+    "summarize-pro": {
+      "version": "1.0.0",
+      "installedAt": 1776312242465
     }
   }
 }

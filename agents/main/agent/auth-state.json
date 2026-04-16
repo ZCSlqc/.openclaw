@@ -7,11 +7,11 @@
   "usageStats": {
     "deepseek:default": {
       "errorCount": 0,
-      "lastUsed": 1776071617669
+      "lastUsed": 1776336527608
     },
     "vllm:default": {
       "errorCount": 0,
-      "lastUsed": 1776080837000
+      "lastUsed": 1776340729559
     }
   }
 }

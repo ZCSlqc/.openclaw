@@ -1,0 +1,1389 @@
+{
+  "agent:hanli:feishu:feishu_hanli:direct:ou_4ca3e04f673b584cabb0c9530ba6092c": {
+    "sessionId": "03b22940-2162-4387-b664-8da4b23fa121",
+    "updatedAt": 1776341041195,
+    "systemSent": true,
+    "abortedLastRun": false,
+    "chatType": "direct",
+    "deliveryContext": {
+      "channel": "feishu",
+      "to": "user:ou_4ca3e04f673b584cabb0c9530ba6092c",
+      "accountId": "feishu_hanli"
+    },
+    "lastChannel": "feishu",
+    "lastTo": "user:ou_4ca3e04f673b584cabb0c9530ba6092c",
+    "lastAccountId": "feishu_hanli",
+    "origin": {
+      "label": "飞书用户2726LZ",
+      "provider": "feishu",
+      "surface": "feishu",
+      "chatType": "direct",
+      "from": "feishu:ou_4ca3e04f673b584cabb0c9530ba6092c",
+      "to": "user:ou_4ca3e04f673b584cabb0c9530ba6092c",
+      "accountId": "feishu_hanli"
+    },
+    "sessionFile": "/home/zigaa/.openclaw/agents/hanli/sessions/03b22940-2162-4387-b664-8da4b23fa121.jsonl",
+    "compactionCount": 0,
+    "skillsSnapshot": {
+      "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>feishu-doc</name>\n    <description>Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-drive</name>\n    <description>Feishu cloud storage file management. Activate when user mentions cloud space, folders, drive.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-perm</name>\n    <description>Feishu permission management for documents and files. Activate when user mentions sharing, permissions, collaborators.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-wiki</name>\n    <description>Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>tavily</name>\n    <description>Tavily web search, content extraction, and research tools.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawhub</name>\n    <description>Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/clawhub/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>github</name>\n    <description>Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.</description>\n    <location>~/.openclaw/workspace-hanli/skills/Github/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <description>Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/node-connect/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>taskflow</name>\n    <description>Use when work should span one or more detached tasks but still behave like one job with a single owner context. TaskFlow is the durable flow substrate under authoring layers like Lobster, ACPX, plugins, or plain code. Keep conditional logic in the caller; use TaskFlow for flow identity, child-task linkage, waiting state, revision-checked mutations, and user-facing emergence.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/taskflow/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>taskflow-inbox-triage</name>\n    <description>Example TaskFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>tmux</name>\n    <description>Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/tmux/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>video-frames</name>\n    <description>Extract frames or short clips from videos using ffmpeg.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/video-frames/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts (no API key required).</description>\n    <location>~/.openclaw/workspace-hanli/skills/Weather/SKILL.md</location>\n  </skill>\n</available_skills>",
+      "skills": [
+        {
+          "name": "feishu-doc"
+        },
+        {
+          "name": "feishu-drive"
+        },
+        {
+          "name": "feishu-perm"
+        },
+        {
+          "name": "feishu-wiki"
+        },
+        {
+          "name": "tavily",
+          "requiredEnv": []
+        },
+        {
+          "name": "clawhub",
+          "requiredEnv": []
+        },
+        {
+          "name": "github"
+        },
+        {
+          "name": "healthcheck"
+        },
+        {
+          "name": "node-connect"
+        },
+        {
+          "name": "skill-creator"
+        },
+        {
+          "name": "taskflow"
+        },
+        {
+          "name": "taskflow-inbox-triage"
+        },
+        {
+          "name": "tmux",
+          "requiredEnv": []
+        },
+        {
+          "name": "video-frames",
+          "requiredEnv": []
+        },
+        {
+          "name": "weather"
+        }
+      ],
+      "resolvedSkills": [
+        {
+          "name": "feishu-doc",
+          "description": "Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "feishu-drive",
+          "description": "Feishu cloud storage file management. Activate when user mentions cloud space, folders, drive.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "feishu-perm",
+          "description": "Feishu permission management for documents and files. Activate when user mentions sharing, permissions, collaborators.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "feishu-wiki",
+          "description": "Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "tavily",
+          "description": "Tavily web search, content extraction, and research tools.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "clawhub",
+          "description": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "github",
+          "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+          "filePath": "/home/zigaa/.openclaw/workspace-hanli/skills/Github/SKILL.md",
+          "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Github",
+          "source": "openclaw-workspace",
+          "sourceInfo": {
+            "path": "/home/zigaa/.openclaw/workspace-hanli/skills/Github/SKILL.md",
+            "source": "openclaw-workspace",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Github"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "healthcheck",
+          "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "node-connect",
+          "description": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "skill-creator",
+          "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "taskflow",
+          "description": "Use when work should span one or more detached tasks but still behave like one job with a single owner context. TaskFlow is the durable flow substrate under authoring layers like Lobster, ACPX, plugins, or plain code. Keep conditional logic in the caller; use TaskFlow for flow identity, child-task linkage, waiting state, revision-checked mutations, and user-facing emergence.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "taskflow-inbox-triage",
+          "description": "Example TaskFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "tmux",
+          "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "video-frames",
+          "description": "Extract frames or short clips from videos using ffmpeg.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "weather",
+          "description": "Get current weather and forecasts (no API key required).",
+          "filePath": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather/SKILL.md",
+          "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather",
+          "source": "openclaw-workspace",
+          "sourceInfo": {
+            "path": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather/SKILL.md",
+            "source": "openclaw-workspace",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather"
+          },
+          "disableModelInvocation": false
+        }
+      ],
+      "version": 0
+    },
+    "status": "done",
+    "startedAt": 1776341035213,
+    "modelProvider": "vllm",
+    "model": "qwen3.5-9b",
+    "contextTokens": 131072,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1776341035201,
+      "sessionId": "03b22940-2162-4387-b664-8da4b23fa121",
+      "sessionKey": "agent:hanli:feishu:feishu_hanli:direct:ou_4ca3e04f673b584cabb0c9530ba6092c",
+      "provider": "vllm",
+      "model": "qwen3.5-9b",
+      "workspaceDir": "/home/zigaa/.openclaw/workspace-hanli",
+      "bootstrapMaxChars": 5000,
+      "bootstrapTotalMaxChars": 10000,
+      "bootstrapTruncation": {
+        "warningMode": "once",
+        "warningShown": false,
+        "promptWarningSignature": "{\"bootstrapMaxChars\":5000,\"bootstrapTotalMaxChars\":10000,\"files\":[{\"path\":\"/home/zigaa/.openclaw/workspace-hanli/AGENTS.md\",\"rawChars\":7809,\"injectedChars\":4608,\"causes\":[\"per-file-limit\",\"total-limit\"]},{\"path\":\"/home/zigaa/.openclaw/workspace-hanli/MEMORY.md\",\"rawChars\":965,\"injectedChars\":863,\"causes\":[\"total-limit\"]}]}",
+        "warningSignaturesSeen": [
+          "{\"bootstrapMaxChars\":5000,\"bootstrapTotalMaxChars\":10000,\"files\":[{\"path\":\"/home/zigaa/.openclaw/workspace-hanli/AGENTS.md\",\"rawChars\":7809,\"injectedChars\":4608,\"causes\":[\"per-file-limit\",\"total-limit\"]},{\"path\":\"/home/zigaa/.openclaw/workspace-hanli/MEMORY.md\",\"rawChars\":965,\"injectedChars\":863,\"causes\":[\"total-limit\"]}]}"
+        ],
+        "truncatedFiles": 2,
+        "nearLimitFiles": 1,
+        "totalNearLimit": true
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 29568,
+        "projectContextChars": 10395,
+        "nonProjectContextChars": 19173
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/AGENTS.md",
+          "missing": false,
+          "rawChars": 7809,
+          "injectedChars": 4608,
+          "truncated": true
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/SOUL.md",
+          "missing": false,
+          "rawChars": 752,
+          "injectedChars": 752,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/TOOLS.md",
+          "missing": false,
+          "rawChars": 850,
+          "injectedChars": 850,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/IDENTITY.md",
+          "missing": false,
+          "rawChars": 557,
+          "injectedChars": 557,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/USER.md",
+          "missing": false,
+          "rawChars": 728,
+          "injectedChars": 728,
+          "truncated": false
+        },
+        {
+          "name": "HEARTBEAT.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/HEARTBEAT.md",
+          "missing": false,
+          "rawChars": 192,
+          "injectedChars": 192,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/BOOTSTRAP.md",
+          "missing": false,
+          "rawChars": 1450,
+          "injectedChars": 1450,
+          "truncated": false
+        },
+        {
+          "name": "MEMORY.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/MEMORY.md",
+          "missing": false,
+          "rawChars": 965,
+          "injectedChars": 863,
+          "truncated": true
+        }
+      ],
+      "skills": {
+        "promptChars": 5947,
+        "entries": [
+          {
+            "name": "feishu-doc",
+            "blockChars": 294
+          },
+          {
+            "name": "feishu-drive",
+            "blockChars": 286
+          },
+          {
+            "name": "feishu-perm",
+            "blockChars": 308
+          },
+          {
+            "name": "feishu-wiki",
+            "blockChars": 288
+          },
+          {
+            "name": "tavily",
+            "blockChars": 238
+          },
+          {
+            "name": "clawhub",
+            "blockChars": 427
+          },
+          {
+            "name": "github",
+            "blockChars": 286
+          },
+          {
+            "name": "healthcheck",
+            "blockChars": 486
+          },
+          {
+            "name": "node-connect",
+            "blockChars": 536
+          },
+          {
+            "name": "skill-creator",
+            "blockChars": 754
+          },
+          {
+            "name": "taskflow",
+            "blockChars": 538
+          },
+          {
+            "name": "taskflow-inbox-triage",
+            "blockChars": 413
+          },
+          {
+            "name": "tmux",
+            "blockChars": 250
+          },
+          {
+            "name": "video-frames",
+            "blockChars": 224
+          },
+          {
+            "name": "weather",
+            "blockChars": 208
+          }
+        ]
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 36691,
+        "entries": [
+          {
+            "name": "read",
+            "summaryChars": 298,
+            "schemaChars": 304,
+            "propertiesCount": 3
+          },
+          {
+            "name": "edit",
+            "summaryChars": 326,
+            "schemaChars": 834,
+            "propertiesCount": 2
+          },
+          {
+            "name": "write",
+            "summaryChars": 127,
+            "schemaChars": 225,
+            "propertiesCount": 2
+          },
+          {
+            "name": "exec",
+            "summaryChars": 539,
+            "schemaChars": 1098,
+            "propertiesCount": 12
+          },
+          {
+            "name": "process",
+            "summaryChars": 416,
+            "schemaChars": 961,
+            "propertiesCount": 12
+          },
+          {
+            "name": "canvas",
+            "summaryChars": 106,
+            "schemaChars": 661,
+            "propertiesCount": 18
+          },
+          {
+            "name": "nodes",
+            "summaryChars": 118,
+            "schemaChars": 1589,
+            "propertiesCount": 32
+          },
+          {
+            "name": "cron",
+            "summaryChars": 3726,
+            "schemaChars": 6700,
+            "propertiesCount": 13
+          },
+          {
+            "name": "message",
+            "summaryChars": 327,
+            "schemaChars": 5876,
+            "propertiesCount": 106
+          },
+          {
+            "name": "tts",
+            "summaryChars": 152,
+            "schemaChars": 223,
+            "propertiesCount": 2
+          },
+          {
+            "name": "gateway",
+            "summaryChars": 494,
+            "schemaChars": 497,
+            "propertiesCount": 12
+          },
+          {
+            "name": "agents_list",
+            "summaryChars": 118,
+            "schemaChars": 33,
+            "propertiesCount": 0
+          },
+          {
+            "name": "sessions_list",
+            "summaryChars": 177,
+            "schemaChars": 212,
+            "propertiesCount": 4
+          },
+          {
+            "name": "sessions_history",
+            "summaryChars": 180,
+            "schemaChars": 161,
+            "propertiesCount": 3
+          },
+          {
+            "name": "sessions_send",
+            "summaryChars": 208,
+            "schemaChars": 274,
+            "propertiesCount": 5
+          },
+          {
+            "name": "sessions_yield",
+            "summaryChars": 97,
+            "schemaChars": 60,
+            "propertiesCount": 1
+          },
+          {
+            "name": "sessions_spawn",
+            "summaryChars": 302,
+            "schemaChars": 1333,
+            "propertiesCount": 18
+          },
+          {
+            "name": "subagents",
+            "summaryChars": 105,
+            "schemaChars": 191,
+            "propertiesCount": 4
+          },
+          {
+            "name": "session_status",
+            "summaryChars": 336,
+            "schemaChars": 89,
+            "propertiesCount": 2
+          },
+          {
+            "name": "web_search",
+            "summaryChars": 167,
+            "schemaChars": 248,
+            "propertiesCount": 2
+          },
+          {
+            "name": "web_fetch",
+            "summaryChars": 129,
+            "schemaChars": 374,
+            "propertiesCount": 3
+          },
+          {
+            "name": "image",
+            "summaryChars": 260,
+            "schemaChars": 342,
+            "propertiesCount": 6
+          },
+          {
+            "name": "pdf",
+            "summaryChars": 275,
+            "schemaChars": 400,
+            "propertiesCount": 6
+          },
+          {
+            "name": "browser",
+            "summaryChars": 1066,
+            "schemaChars": 2799,
+            "propertiesCount": 48
+          },
+          {
+            "name": "feishu_doc",
+            "summaryChars": 321,
+            "schemaChars": 2898,
+            "propertiesCount": 27
+          },
+          {
+            "name": "feishu_app_scopes",
+            "summaryChars": 102,
+            "schemaChars": 33,
+            "propertiesCount": 0
+          },
+          {
+            "name": "feishu_chat",
+            "summaryChars": 59,
+            "schemaChars": 606,
+            "propertiesCount": 6
+          },
+          {
+            "name": "feishu_wiki",
+            "summaryChars": 83,
+            "schemaChars": 971,
+            "propertiesCount": 10
+          },
+          {
+            "name": "feishu_drive",
+            "summaryChars": 146,
+            "schemaChars": 1094,
+            "propertiesCount": 11
+          },
+          {
+            "name": "feishu_bitable_get_meta",
+            "summaryChars": 114,
+            "schemaChars": 170,
+            "propertiesCount": 1
+          },
+          {
+            "name": "feishu_bitable_list_fields",
+            "summaryChars": 76,
+            "schemaChars": 255,
+            "propertiesCount": 2
+          },
+          {
+            "name": "feishu_bitable_list_records",
+            "summaryChars": 64,
+            "schemaChars": 462,
+            "propertiesCount": 4
+          },
+          {
+            "name": "feishu_bitable_get_record",
+            "summaryChars": 46,
+            "schemaChars": 335,
+            "propertiesCount": 3
+          },
+          {
+            "name": "feishu_bitable_create_record",
+            "summaryChars": 44,
+            "schemaChars": 549,
+            "propertiesCount": 3
+          },
+          {
+            "name": "feishu_bitable_update_record",
+            "summaryChars": 50,
+            "schemaChars": 473,
+            "propertiesCount": 4
+          },
+          {
+            "name": "feishu_bitable_create_app",
+            "summaryChars": 57,
+            "schemaChars": 243,
+            "propertiesCount": 2
+          },
+          {
+            "name": "feishu_bitable_create_field",
+            "summaryChars": 46,
+            "schemaChars": 911,
+            "propertiesCount": 5
+          },
+          {
+            "name": "memory_search",
+            "summaryChars": 385,
+            "schemaChars": 260,
+            "propertiesCount": 4
+          },
+          {
+            "name": "memory_get",
+            "summaryChars": 207,
+            "schemaChars": 249,
+            "propertiesCount": 4
+          },
+          {
+            "name": "tavily_search",
+            "summaryChars": 133,
+            "schemaChars": 1033,
+            "propertiesCount": 8
+          },
+          {
+            "name": "tavily_extract",
+            "summaryChars": 117,
+            "schemaChars": 665,
+            "propertiesCount": 5
+          }
+        ]
+      }
+    },
+    "inputTokens": 75500,
+    "outputTokens": 368,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "estimatedCostUsd": 0,
+    "totalTokens": 39196,
+    "totalTokensFresh": true,
+    "channel": "feishu",
+    "authProfileOverride": "vllm:default",
+    "authProfileOverrideSource": "auto",
+    "authProfileOverrideCompactionCount": 0,
+    "endedAt": 1776341041079,
+    "runtimeMs": 5866
+  },
+  "agent:hanli:subagent:c5e4fc19-8820-4bd7-b124-6e73026e1cc6": {
+    "sessionId": "dc502929-8f31-49a0-8a87-5f617c213515",
+    "updatedAt": 1776326288682,
+    "spawnDepth": 1,
+    "subagentRole": "leaf",
+    "subagentControlScope": "none",
+    "model": "qwen3.5-9b",
+    "modelProvider": "vllm",
+    "spawnedBy": "agent:hanli:feishu:feishu_hanli:direct:ou_4ca3e04f673b584cabb0c9530ba6092c",
+    "spawnedWorkspaceDir": "/home/zigaa/.openclaw/workspace-hanli",
+    "deliveryContext": {
+      "channel": "feishu",
+      "to": "user:ou_4ca3e04f673b584cabb0c9530ba6092c",
+      "accountId": "feishu_hanli"
+    },
+    "lastChannel": "feishu",
+    "lastTo": "user:ou_4ca3e04f673b584cabb0c9530ba6092c",
+    "lastAccountId": "feishu_hanli",
+    "label": "查找 OpenClaw 短视频参考案例",
+    "channel": "feishu",
+    "skillsSnapshot": {
+      "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>feishu-doc</name>\n    <description>Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-drive</name>\n    <description>Feishu cloud storage file management. Activate when user mentions cloud space, folders, drive.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-perm</name>\n    <description>Feishu permission management for documents and files. Activate when user mentions sharing, permissions, collaborators.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>feishu-wiki</name>\n    <description>Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>tavily</name>\n    <description>Tavily web search, content extraction, and research tools.</description>\n    <location>~/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawhub</name>\n    <description>Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/clawhub/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>github</name>\n    <description>Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.</description>\n    <location>~/.openclaw/workspace-hanli/skills/Github/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <description>Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/node-connect/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>taskflow</name>\n    <description>Use when work should span one or more detached tasks but still behave like one job with a single owner context. TaskFlow is the durable flow substrate under authoring layers like Lobster, ACPX, plugins, or plain code. Keep conditional logic in the caller; use TaskFlow for flow identity, child-task linkage, waiting state, revision-checked mutations, and user-facing emergence.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/taskflow/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>taskflow-inbox-triage</name>\n    <description>Example TaskFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>tmux</name>\n    <description>Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/tmux/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>video-frames</name>\n    <description>Extract frames or short clips from videos using ffmpeg.</description>\n    <location>~/.local/lib/node_modules/openclaw/skills/video-frames/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts (no API key required).</description>\n    <location>~/.openclaw/workspace-hanli/skills/Weather/SKILL.md</location>\n  </skill>\n</available_skills>",
+      "skills": [
+        {
+          "name": "feishu-doc"
+        },
+        {
+          "name": "feishu-drive"
+        },
+        {
+          "name": "feishu-perm"
+        },
+        {
+          "name": "feishu-wiki"
+        },
+        {
+          "name": "tavily",
+          "requiredEnv": []
+        },
+        {
+          "name": "clawhub",
+          "requiredEnv": []
+        },
+        {
+          "name": "github"
+        },
+        {
+          "name": "healthcheck"
+        },
+        {
+          "name": "node-connect"
+        },
+        {
+          "name": "skill-creator"
+        },
+        {
+          "name": "taskflow"
+        },
+        {
+          "name": "taskflow-inbox-triage"
+        },
+        {
+          "name": "tmux",
+          "requiredEnv": []
+        },
+        {
+          "name": "video-frames",
+          "requiredEnv": []
+        },
+        {
+          "name": "weather"
+        }
+      ],
+      "resolvedSkills": [
+        {
+          "name": "feishu-doc",
+          "description": "Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-doc"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "feishu-drive",
+          "description": "Feishu cloud storage file management. Activate when user mentions cloud space, folders, drive.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-drive"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "feishu-perm",
+          "description": "Feishu permission management for documents and files. Activate when user mentions sharing, permissions, collaborators.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-perm"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "feishu-wiki",
+          "description": "Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/feishu/skills/feishu-wiki"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "tavily",
+          "description": "Tavily web search, content extraction, and research tools.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily",
+          "source": "openclaw-extra",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily/SKILL.md",
+            "source": "openclaw-extra",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/dist/extensions/tavily/skills/tavily"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "clawhub",
+          "description": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/clawhub"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "github",
+          "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+          "filePath": "/home/zigaa/.openclaw/workspace-hanli/skills/Github/SKILL.md",
+          "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Github",
+          "source": "openclaw-workspace",
+          "sourceInfo": {
+            "path": "/home/zigaa/.openclaw/workspace-hanli/skills/Github/SKILL.md",
+            "source": "openclaw-workspace",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Github"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "healthcheck",
+          "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/healthcheck"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "node-connect",
+          "description": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/node-connect"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "skill-creator",
+          "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/skill-creator"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "taskflow",
+          "description": "Use when work should span one or more detached tasks but still behave like one job with a single owner context. TaskFlow is the durable flow substrate under authoring layers like Lobster, ACPX, plugins, or plain code. Keep conditional logic in the caller; use TaskFlow for flow identity, child-task linkage, waiting state, revision-checked mutations, and user-facing emergence.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "taskflow-inbox-triage",
+          "description": "Example TaskFlow authoring pattern for inbox triage. Use when messages need different treatment based on intent, with some routes notifying immediately, some waiting on outside answers, and others rolling into a later summary.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/taskflow-inbox-triage"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "tmux",
+          "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/tmux"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "video-frames",
+          "description": "Extract frames or short clips from videos using ffmpeg.",
+          "filePath": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames/SKILL.md",
+          "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames",
+          "source": "openclaw-bundled",
+          "sourceInfo": {
+            "path": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames/SKILL.md",
+            "source": "openclaw-bundled",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.local/lib/node_modules/openclaw/skills/video-frames"
+          },
+          "disableModelInvocation": false
+        },
+        {
+          "name": "weather",
+          "description": "Get current weather and forecasts (no API key required).",
+          "filePath": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather/SKILL.md",
+          "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather",
+          "source": "openclaw-workspace",
+          "sourceInfo": {
+            "path": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather/SKILL.md",
+            "source": "openclaw-workspace",
+            "scope": "project",
+            "origin": "top-level",
+            "baseDir": "/home/zigaa/.openclaw/workspace-hanli/skills/Weather"
+          },
+          "disableModelInvocation": false
+        }
+      ],
+      "version": 0
+    },
+    "sessionFile": "/home/zigaa/.openclaw/agents/hanli/sessions/dc502929-8f31-49a0-8a87-5f617c213515.jsonl",
+    "status": "done",
+    "startedAt": 1776326216751,
+    "abortedLastRun": false,
+    "endedAt": 1776326281000,
+    "runtimeMs": 63266,
+    "contextTokens": 131072,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1776326217723,
+      "sessionId": "dc502929-8f31-49a0-8a87-5f617c213515",
+      "sessionKey": "agent:hanli:subagent:c5e4fc19-8820-4bd7-b124-6e73026e1cc6",
+      "provider": "vllm",
+      "model": "qwen3.5-9b",
+      "workspaceDir": "/home/zigaa/.openclaw/workspace-hanli",
+      "bootstrapMaxChars": 5000,
+      "bootstrapTotalMaxChars": 10000,
+      "bootstrapTruncation": {
+        "warningMode": "once",
+        "warningShown": true,
+        "promptWarningSignature": "{\"bootstrapMaxChars\":5000,\"bootstrapTotalMaxChars\":10000,\"files\":[{\"path\":\"/home/zigaa/.openclaw/workspace-hanli/AGENTS.md\",\"rawChars\":7809,\"injectedChars\":4608,\"causes\":[\"per-file-limit\"]}]}",
+        "warningSignaturesSeen": [
+          "{\"bootstrapMaxChars\":5000,\"bootstrapTotalMaxChars\":10000,\"files\":[{\"path\":\"/home/zigaa/.openclaw/workspace-hanli/AGENTS.md\",\"rawChars\":7809,\"injectedChars\":4608,\"causes\":[\"per-file-limit\"]}]}"
+        ],
+        "truncatedFiles": 1,
+        "nearLimitFiles": 1,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 20939,
+        "projectContextChars": 10350,
+        "nonProjectContextChars": 10589
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/AGENTS.md",
+          "missing": false,
+          "rawChars": 7809,
+          "injectedChars": 4608,
+          "truncated": true
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/SOUL.md",
+          "missing": false,
+          "rawChars": 752,
+          "injectedChars": 752,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/TOOLS.md",
+          "missing": false,
+          "rawChars": 850,
+          "injectedChars": 850,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/IDENTITY.md",
+          "missing": false,
+          "rawChars": 557,
+          "injectedChars": 557,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/home/zigaa/.openclaw/workspace-hanli/USER.md",
+          "missing": false,
+          "rawChars": 728,
+          "injectedChars": 728,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 5947,
+        "entries": [
+          {
+            "name": "feishu-doc",
+            "blockChars": 294
+          },
+          {
+            "name": "feishu-drive",
+            "blockChars": 286
+          },
+          {
+            "name": "feishu-perm",
+            "blockChars": 308
+          },
+          {
+            "name": "feishu-wiki",
+            "blockChars": 288
+          },
+          {
+            "name": "tavily",
+            "blockChars": 238
+          },
+          {
+            "name": "clawhub",
+            "blockChars": 427
+          },
+          {
+            "name": "github",
+            "blockChars": 286
+          },
+          {
+            "name": "healthcheck",
+            "blockChars": 486
+          },
+          {
+            "name": "node-connect",
+            "blockChars": 536
+          },
+          {
+            "name": "skill-creator",
+            "blockChars": 754
+          },
+          {
+            "name": "taskflow",
+            "blockChars": 538
+          },
+          {
+            "name": "taskflow-inbox-triage",
+            "blockChars": 413
+          },
+          {
+            "name": "tmux",
+            "blockChars": 250
+          },
+          {
+            "name": "video-frames",
+            "blockChars": 224
+          },
+          {
+            "name": "weather",
+            "blockChars": 208
+          }
+        ]
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 25612,
+        "entries": [
+          {
+            "name": "read",
+            "summaryChars": 298,
+            "schemaChars": 304,
+            "propertiesCount": 3
+          },
+          {
+            "name": "edit",
+            "summaryChars": 326,
+            "schemaChars": 834,
+            "propertiesCount": 2
+          },
+          {
+            "name": "write",
+            "summaryChars": 127,
+            "schemaChars": 225,
+            "propertiesCount": 2
+          },
+          {
+            "name": "exec",
+            "summaryChars": 446,
+            "schemaChars": 1098,
+            "propertiesCount": 12
+          },
+          {
+            "name": "process",
+            "summaryChars": 322,
+            "schemaChars": 961,
+            "propertiesCount": 12
+          },
+          {
+            "name": "canvas",
+            "summaryChars": 106,
+            "schemaChars": 661,
+            "propertiesCount": 18
+          },
+          {
+            "name": "message",
+            "summaryChars": 327,
+            "schemaChars": 5876,
+            "propertiesCount": 106
+          },
+          {
+            "name": "tts",
+            "summaryChars": 152,
+            "schemaChars": 223,
+            "propertiesCount": 2
+          },
+          {
+            "name": "sessions_yield",
+            "summaryChars": 97,
+            "schemaChars": 60,
+            "propertiesCount": 1
+          },
+          {
+            "name": "web_search",
+            "summaryChars": 167,
+            "schemaChars": 248,
+            "propertiesCount": 2
+          },
+          {
+            "name": "web_fetch",
+            "summaryChars": 129,
+            "schemaChars": 374,
+            "propertiesCount": 3
+          },
+          {
+            "name": "image",
+            "summaryChars": 260,
+            "schemaChars": 342,
+            "propertiesCount": 6
+          },
+          {
+            "name": "pdf",
+            "summaryChars": 275,
+            "schemaChars": 400,
+            "propertiesCount": 6
+          },
+          {
+            "name": "browser",
+            "summaryChars": 1066,
+            "schemaChars": 2799,
+            "propertiesCount": 48
+          },
+          {
+            "name": "feishu_doc",
+            "summaryChars": 321,
+            "schemaChars": 2898,
+            "propertiesCount": 27
+          },
+          {
+            "name": "feishu_app_scopes",
+            "summaryChars": 102,
+            "schemaChars": 33,
+            "propertiesCount": 0
+          },
+          {
+            "name": "feishu_chat",
+            "summaryChars": 59,
+            "schemaChars": 606,
+            "propertiesCount": 6
+          },
+          {
+            "name": "feishu_wiki",
+            "summaryChars": 83,
+            "schemaChars": 971,
+            "propertiesCount": 10
+          },
+          {
+            "name": "feishu_drive",
+            "summaryChars": 146,
+            "schemaChars": 1094,
+            "propertiesCount": 11
+          },
+          {
+            "name": "feishu_bitable_get_meta",
+            "summaryChars": 114,
+            "schemaChars": 170,
+            "propertiesCount": 1
+          },
+          {
+            "name": "feishu_bitable_list_fields",
+            "summaryChars": 76,
+            "schemaChars": 255,
+            "propertiesCount": 2
+          },
+          {
+            "name": "feishu_bitable_list_records",
+            "summaryChars": 64,
+            "schemaChars": 462,
+            "propertiesCount": 4
+          },
+          {
+            "name": "feishu_bitable_get_record",
+            "summaryChars": 46,
+            "schemaChars": 335,
+            "propertiesCount": 3
+          },
+          {
+            "name": "feishu_bitable_create_record",
+            "summaryChars": 44,
+            "schemaChars": 549,
+            "propertiesCount": 3
+          },
+          {
+            "name": "feishu_bitable_update_record",
+            "summaryChars": 50,
+            "schemaChars": 473,
+            "propertiesCount": 4
+          },
+          {
+            "name": "feishu_bitable_create_app",
+            "summaryChars": 57,
+            "schemaChars": 243,
+            "propertiesCount": 2
+          },
+          {
+            "name": "feishu_bitable_create_field",
+            "summaryChars": 46,
+            "schemaChars": 911,
+            "propertiesCount": 5
+          },
+          {
+            "name": "memory_search",
+            "summaryChars": 385,
+            "schemaChars": 260,
+            "propertiesCount": 4
+          },
+          {
+            "name": "memory_get",
+            "summaryChars": 207,
+            "schemaChars": 249,
+            "propertiesCount": 4
+          },
+          {
+            "name": "tavily_search",
+            "summaryChars": 133,
+            "schemaChars": 1033,
+            "propertiesCount": 8
+          },
+          {
+            "name": "tavily_extract",
+            "summaryChars": 117,
+            "schemaChars": 665,
+            "propertiesCount": 5
+          }
+        ]
+      }
+    },
+    "inputTokens": 274320,
+    "outputTokens": 2664,
+    "totalTokens": 60833,
+    "totalTokensFresh": true,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "estimatedCostUsd": 0
+  }
+}

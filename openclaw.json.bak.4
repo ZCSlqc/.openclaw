@@ -13,17 +13,58 @@
         "fallbacks": [
           "deepseek/deepseek-chat"
         ]
-      }
+      },
+      "compaction": {
+        "notifyUser": true,
+        "mode": "safeguard",
+        "model": "vllm/qwen3.5-9b",
+        "memoryFlush": {
+          "enabled": true
+        },
+        "keepRecentTokens": 30000,
+        "maxHistoryShare": 0.2
+      },
+      "bootstrapMaxChars": 5000,
+      "bootstrapTotalMaxChars": 10000,
+      "subagents": {
+        "allowAgents": [
+          "zcs"
+        ]
+      },
+      "heartbeat": {
+        "activeHours": {
+          "start": "08:00",
+          "end": "20:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "ackMaxChars": 1000,
+        "every": "2h",
+        "model": "vllm/qwen3.5-9b",
+        "directPolicy": "allow"
+      },
+      "blockStreamingDefault": "on"
     },
     "list": [
       {
-        "id": "main"
+        "id": "main",
+        "name": "HanLi",
+        "workspace": "/home/zigaa/.openclaw/workspace",
+        "agentDir": "/home/zigaa/.openclaw/agents/main/agent"
       },
       {
         "id": "zcs",
-        "name": "zcs",
+        "name": "ZhongChanSi",
         "workspace": "/home/zigaa/.openclaw/workspace-zcs",
-        "agentDir": "/home/zigaa/.openclaw/agents/zcs/agent"
+        "agentDir": "/home/zigaa/.openclaw/agents/zcs/agent",
+        "tools": {
+          "profile": "coding"
+        }
+      },
+      {
+        "id": "hanli",
+        "name": "hanli",
+        "workspace": "/home/zigaa/.openclaw/workspace-hanli",
+        "agentDir": "/home/zigaa/.openclaw/agents/hanli/agent"
       }
     ]
   },
@@ -56,15 +97,27 @@
     }
   },
   "session": {
-    "dmScope": "per-channel-peer"
+    "dmScope": "per-account-channel-peer",
+    "agentToAgent": {
+      "maxPingPongTurns": 5
+    }
   },
   "tools": {
-    "profile": "coding",
+    "profile": "full",
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "*"
+      ]
+    },
     "web": {
       "search": {
         "provider": "tavily",
         "enabled": true
       }
+    },
+    "sessions": {
+      "visibility": "all"
     }
   },
   "models": {
@@ -135,7 +188,7 @@
               "cacheRead": 0,
               "cacheWrite": 0
             },
-            "contextWindow": 128000,
+            "contextWindow": 131072,
             "maxTokens": 8192
           }
         ]
@@ -159,31 +212,49 @@
       "enabled": true,
       "connectionMode": "websocket",
       "domain": "feishu",
-      "dmPolicy": "open",
+      "heartbeat": {
+        "intervalMs": 7200000,
+        "visibility": "visible"
+      },
+      "groupPolicy": "open",
+      "requireMention": true,
       "accounts": {
-        "default": {
+        "default": {},
+        "feishu_hanli": {
           "appId": "cli_a92dba56b339dbc6",
           "appSecret": "4Rz5rxSSSkOBPSYQkJ69agIpK0OJ4k2A",
-          "name": "hanli bot",
-          "groupPolicy": "allowlist",
-          "groups": {
-            "*": {
-              "enabled": true,
-              "requireMention": true
-            }
-          }
+          "name": "韩立",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_4ca3e04f673b584cabb0c9530ba6092c"
+          ]
         },
         "feishu_zcs": {
           "appId": "cli_a92d5d6b69395cd6",
           "appSecret": "JfbVI1GUPDsioTOtPzHSffuFKtg0nYYm",
-          "name": "zcs bot",
-          "groupPolicy": "allowlist",
-          "groups": {
-            "*": {
-              "enabled": true,
-              "requireMention": true
-            }
-          }
+          "name": "中禅寺",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_57fc20d82d39a490d881bfe6db969b77"
+          ]
+        },
+        "project_manager": {
+          "appId": "cli_a9559745953a9cd2",
+          "appSecret": "xErq8eMO6Ul6KZKNWQF4VeBPoiaxN2ni",
+          "name": "项目经理",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_86e05fde861d65cbcc06f6e732d0b11d"
+          ]
+        },
+        "full_stack_engineer": {
+          "appId": "cli_a9559022bd38dccb",
+          "appSecret": "jQf95x26qfJ3GVAgbQso2b13gZ657AWU",
+          "name": "全栈工程师",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_5e976f1bebfd947610b5550fa70ef381"
+          ]
         }
       }
     }
@@ -207,14 +278,14 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-04-13T03:37:48.171Z",
+    "lastRunAt": "2026-04-13T06:06:26.905Z",
     "lastRunVersion": "2026.4.9",
-    "lastRunCommand": "configure",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.4.9",
-    "lastTouchedAt": "2026-04-13T03:38:00.511Z"
+    "lastTouchedVersion": "2026.4.14",
+    "lastTouchedAt": "2026-04-15T06:45:23.015Z"
   },
   "bindings": [
     {
@@ -222,7 +293,7 @@
       "agentId": "main",
       "match": {
         "channel": "feishu",
-        "accountId": "default"
+        "accountId": "feishu_hanli"
       }
     },
     {

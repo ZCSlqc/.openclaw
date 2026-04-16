@@ -1,2 +1,3 @@
 # 忽略 workspace-develop 文件夹
-/workspace-develop/
+workspace/workspace-develop/
+extensions/

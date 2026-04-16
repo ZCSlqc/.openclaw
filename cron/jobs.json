@@ -6,7 +6,7 @@
       "name": "喝水提醒",
       "enabled": true,
       "createdAtMs": 1776079120936,
-      "updatedAtMs": 1776079120936,
+      "updatedAtMs": 1776338291434,
       "schedule": {
         "kind": "cron",
         "expr": "18 19 * * *"
@@ -22,7 +22,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776165480000
+        "nextRunAtMs": 1776424680000,
+        "lastRunAtMs": 1776338280014,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 11420,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 3,
+        "lastError": "Channel is required when multiple channels are configured: feishu, openclaw-weixin Set delivery.channel explicitly or use a main session with a previous channel."
       }
     }
   ]

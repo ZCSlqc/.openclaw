@@ -13,17 +13,70 @@
         "fallbacks": [
           "deepseek/deepseek-chat"
         ]
-      }
+      },
+      "compaction": {
+        "notifyUser": true,
+        "mode": "safeguard",
+        "model": "vllm/qwen3.5-9b",
+        "memoryFlush": {
+          "enabled": true
+        },
+        "keepRecentTokens": 30000,
+        "maxHistoryShare": 0.2
+      },
+      "bootstrapMaxChars": 5000,
+      "bootstrapTotalMaxChars": 10000,
+      "subagents": {
+        "allowAgents": [
+          "zcs"
+        ]
+      },
+      "heartbeat": {
+        "activeHours": {
+          "start": "08:00",
+          "end": "20:00",
+          "timezone": "Asia/Shanghai"
+        },
+        "ackMaxChars": 1000,
+        "every": "2h",
+        "model": "vllm/qwen3.5-9b",
+        "directPolicy": "allow"
+      },
+      "blockStreamingDefault": "on"
     },
     "list": [
       {
-        "id": "main"
+        "id": "main",
+        "name": "主助手",
+        "workspace": "/home/zigaa/.openclaw/workspace",
+        "agentDir": "/home/zigaa/.openclaw/agents/main/agent"
       },
       {
         "id": "zcs",
-        "name": "zcs",
+        "name": "中禅寺",
         "workspace": "/home/zigaa/.openclaw/workspace-zcs",
         "agentDir": "/home/zigaa/.openclaw/agents/zcs/agent"
+      },
+      {
+        "id": "hanli",
+        "name": "韩立",
+        "workspace": "/home/zigaa/.openclaw/workspace-hanli",
+        "agentDir": "/home/zigaa/.openclaw/agents/hanli/agent"
+      },
+      {
+        "id": "project_manager",
+        "name": "项目经理",
+        "workspace": "/home/zigaa/.openclaw/workspace-project_manager",
+        "agentDir": "/home/zigaa/.openclaw/agents/project_manager/agent"
+      },
+      {
+        "id": "full_stack_engineer",
+        "name": "全栈工程师",
+        "workspace": "/home/zigaa/.openclaw/workspace-full_stack_engineer",
+        "agentDir": "/home/zigaa/.openclaw/agents/full_stack_engineer/agent",
+        "tools": {
+          "profile": "coding"
+        }
       }
     ]
   },
@@ -56,15 +109,27 @@
     }
   },
   "session": {
-    "dmScope": "per-channel-peer"
+    "dmScope": "per-account-channel-peer",
+    "agentToAgent": {
+      "maxPingPongTurns": 5
+    }
   },
   "tools": {
     "profile": "full",
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "*"
+      ]
+    },
     "web": {
       "search": {
         "provider": "tavily",
         "enabled": true
       }
+    },
+    "sessions": {
+      "visibility": "all"
     }
   },
   "models": {
@@ -135,7 +200,7 @@
               "cacheRead": 0,
               "cacheWrite": 0
             },
-            "contextWindow": 128000,
+            "contextWindow": 131072,
             "maxTokens": 8192
           }
         ]
@@ -159,26 +224,54 @@
       "enabled": true,
       "connectionMode": "websocket",
       "domain": "feishu",
-      "dmPolicy": "open",
+      "heartbeat": {
+        "intervalMs": 7200000,
+        "visibility": "visible"
+      },
+      "appId": "cli_a955906a55389cd5",
+      "appSecret": "1bU2U0WZCdsrXQY5yN0l9cYEhBuVgwJ6",
+      "dmPolicy": "pairing",
+      "groupPolicy": "open",
+      "requireMention": true,
       "accounts": {
-        "default": {
+        "default": {},
+        "feishu_hanli": {
           "appId": "cli_a92dba56b339dbc6",
           "appSecret": "4Rz5rxSSSkOBPSYQkJ69agIpK0OJ4k2A",
-          "name": "hanli bot",
-          "groupPolicy": "open",
-          "requireMention": true
+          "name": "韩立",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_4ca3e04f673b584cabb0c9530ba6092c"
+          ]
         },
         "feishu_zcs": {
           "appId": "cli_a92d5d6b69395cd6",
           "appSecret": "JfbVI1GUPDsioTOtPzHSffuFKtg0nYYm",
-          "name": "zcs bot",
-          "groupPolicy": "open",
-          "requireMention": true
+          "name": "中禅寺",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_57fc20d82d39a490d881bfe6db969b77"
+          ]
+        },
+        "project_manager": {
+          "appId": "cli_a9559745953a9cd2",
+          "appSecret": "xErq8eMO6Ul6KZKNWQF4VeBPoiaxN2ni",
+          "name": "项目经理",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_86e05fde861d65cbcc06f6e732d0b11d"
+          ]
+        },
+        "full_stack_engineer": {
+          "appId": "cli_a9559022bd38dccb",
+          "appSecret": "jQf95x26qfJ3GVAgbQso2b13gZ657AWU",
+          "name": "全栈工程师",
+          "dmPolicy": "allowlist",
+          "allowFrom": [
+            "ou_5e976f1bebfd947610b5550fa70ef381"
+          ]
         }
-      },
-      "allowFrom": [
-        "*"
-      ]
+      }
     }
   },
   "plugins": {
@@ -196,6 +289,24 @@
       },
       "vllm": {
         "enabled": true
+      },
+      "openclaw-weixin": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "openclaw-weixin": {
+        "source": "npm",
+        "spec": "@tencent-weixin/openclaw-weixin@latest",
+        "installPath": "/home/zigaa/.openclaw/extensions/openclaw-weixin",
+        "version": "2.1.8",
+        "resolvedName": "@tencent-weixin/openclaw-weixin",
+        "resolvedVersion": "2.1.8",
+        "resolvedSpec": "@tencent-weixin/openclaw-weixin@2.1.8",
+        "integrity": "sha512-YM2fumDI+NvslhFH4gsek+scgCwTdyz7eMDyfNadCTXPjh9hoosn8tcMF0P90gQJEGEud7AJXiKKd8IKGNCfRA==",
+        "shasum": "0eb590449ee94aa852dd9df4f2fb378c46bc7774",
+        "resolvedAt": "2026-04-16T03:35:16.516Z",
+        "installedAt": "2026-04-16T03:35:30.322Z"
       }
     }
   },
@@ -206,8 +317,8 @@
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.4.9",
-    "lastTouchedAt": "2026-04-13T11:08:25.197Z"
+    "lastTouchedVersion": "2026.4.14",
+    "lastTouchedAt": "2026-04-16T03:35:30.499Z"
   },
   "bindings": [
     {
@@ -224,6 +335,30 @@
       "match": {
         "channel": "feishu",
         "accountId": "feishu_zcs"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "hanli",
+      "match": {
+        "channel": "feishu",
+        "accountId": "feishu_hanli"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "project_manager",
+      "match": {
+        "channel": "feishu",
+        "accountId": "project_manager"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "full_stack_engineer",
+      "match": {
+        "channel": "feishu",
+        "accountId": "full_stack_engineer"
       }
     }
   ]
