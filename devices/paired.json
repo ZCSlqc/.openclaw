@@ -43,7 +43,7 @@
     },
     "createdAtMs": 1776045790631,
     "approvedAtMs": 1776060020539,
-    "displayName": "gateway:agent.wait"
+    "displayName": "gateway:doctor.memory.status"
   },
   "648ee7741400cadfaf29a587e773919a3a4fae4fe9827bfe9c76310f83c33d3f": {
     "deviceId": "648ee7741400cadfaf29a587e773919a3a4fae4fe9827bfe9c76310f83c33d3f",
@@ -523,5 +523,82 @@
     },
     "createdAtMs": 1776331838029,
     "approvedAtMs": 1776331838029
+  },
+  "eacd10ef8ba7de8835033ea77c7d821b9ee87a6a23716f0f09b09d3ff72b14c6": {
+    "deviceId": "eacd10ef8ba7de8835033ea77c7d821b9ee87a6a23716f0f09b09d3ff72b14c6",
+    "publicKey": "PxAvwwVNliPBpU8gJqounbZYcZVtq6cQx1afMfBbYlM",
+    "displayName": "OpenClaw Web Backend",
+    "platform": "linux",
+    "clientId": "cli",
+    "clientMode": "cli",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.read",
+      "operator.write",
+      "operator.admin"
+    ],
+    "approvedScopes": [
+      "operator.read",
+      "operator.write",
+      "operator.admin"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "pIE61-44kHQNR_lRNuSn0JNEnF1L3DaXyYMO7KJfkLI",
+        "role": "operator",
+        "scopes": [
+          "operator.admin",
+          "operator.read",
+          "operator.write"
+        ],
+        "createdAtMs": 1776414680023
+      }
+    },
+    "createdAtMs": 1776414680023,
+    "approvedAtMs": 1776414680023
+  },
+  "f3a7fa5315699dd4c0a956b5973ef95fb26e1f8ef60e1f1ebdef167a3c8a9dc2": {
+    "deviceId": "f3a7fa5315699dd4c0a956b5973ef95fb26e1f8ef60e1f1ebdef167a3c8a9dc2",
+    "publicKey": "oUwID-Clwi7CJVDc6fK08dyU2UqnCYOC2WMS7Z6Kv7g",
+    "platform": "Win32",
+    "clientId": "openclaw-control-ui",
+    "clientMode": "webchat",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.admin",
+      "operator.read",
+      "operator.write",
+      "operator.approvals",
+      "operator.pairing"
+    ],
+    "approvedScopes": [
+      "operator.admin",
+      "operator.read",
+      "operator.write",
+      "operator.approvals",
+      "operator.pairing"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "yzfjCtD98TiYp468lDHopuMZ3qZOJCErbarPxhHttl0",
+        "role": "operator",
+        "scopes": [
+          "operator.admin",
+          "operator.approvals",
+          "operator.pairing",
+          "operator.read",
+          "operator.write"
+        ],
+        "createdAtMs": 1776414904162
+      }
+    },
+    "createdAtMs": 1776414904162,
+    "approvedAtMs": 1776414904162
   }
 }

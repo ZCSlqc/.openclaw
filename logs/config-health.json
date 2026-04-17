@@ -2,10 +2,10 @@
   "entries": {
     "/home/zigaa/.openclaw/openclaw.json": {
       "lastKnownGood": {
-        "hash": "f5729a86ed0f597c1eb60f6a2edf6450bf6e465c12a0e3d61319074eb02b9a6a",
-        "bytes": 9146,
-        "mtimeMs": 1776318349749.2144,
-        "ctimeMs": 1776318349749.2144,
+        "hash": "b69fd98e8ae01c5a268d5685dcaf9aafe3fb151f174f1fd67c4156f2b3d78ddc",
+        "bytes": 10004,
+        "mtimeMs": 1776425099357.7576,
+        "ctimeMs": 1776425099357.7576,
         "dev": "66307",
         "ino": "5636244",
         "mode": 384,
@@ -14,7 +14,7 @@
         "gid": 1000,
         "hasMeta": true,
         "gatewayMode": "local",
-        "observedAt": "2026-04-16T05:45:50.402Z"
+        "observedAt": "2026-04-17T11:25:00.006Z"
       },
       "lastObservedSuspiciousSignature": null
     }

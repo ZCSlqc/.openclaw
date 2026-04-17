@@ -1,4 +1,36 @@
 {
   "version": 1,
-  "jobs": []
+  "jobs": [
+    {
+      "id": "46902ae8-c747-453f-8656-b733dac99010",
+      "name": "喝水提醒",
+      "enabled": true,
+      "createdAtMs": 1776079120936,
+      "updatedAtMs": 1776424692430,
+      "schedule": {
+        "kind": "cron",
+        "expr": "18 19 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "道友，时间到了该喝口水了！💧记得多喝点水，润润嗓子～"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776511080000,
+        "lastRunAtMs": 1776424680020,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 12410,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 4,
+        "lastError": "Channel is required when multiple channels are configured: feishu, openclaw-weixin Set delivery.channel explicitly or use a main session with a previous channel."
+      }
+    }
+  ]
 }

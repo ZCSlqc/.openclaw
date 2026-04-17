@@ -122,7 +122,7 @@
       ]
     },
     "vllm": {
-      "baseUrl": "http://localhost:11435/v1",
+      "baseUrl": "http://localhost:50001/v1",
       "api": "openai-completions",
       "apiKey": "VLLM_API_KEY",
       "models": [

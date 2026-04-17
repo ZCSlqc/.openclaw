@@ -1,6 +1,7 @@
 {
   "agents": {
     "defaults": {
+      "skipBootstrap": true,
       "workspace": "/home/zigaa/.openclaw/workspace",
       "models": {
         "deepseek/deepseek-chat": {
@@ -24,11 +25,12 @@
         "keepRecentTokens": 30000,
         "maxHistoryShare": 0.2
       },
+      "contextPruning": { "mode": "cache-ttl", "ttl": "7d" },
       "bootstrapMaxChars": 5000,
       "bootstrapTotalMaxChars": 10000,
       "subagents": {
         "allowAgents": [
-          "zcs"
+          "zcs","hanli","project_manager","full_stack_engineer"
         ]
       },
       "heartbeat": {
@@ -182,7 +184,7 @@
         ]
       },
       "vllm": {
-        "baseUrl": "http://localhost:11435/v1",
+        "baseUrl": "http://localhost:50001/v1",
         "api": "openai-completions",
         "apiKey": "VLLM_API_KEY",
         "models": [
@@ -222,19 +224,19 @@
   "channels": {
     "feishu": {
       "enabled": true,
-      "connectionMode": "websocket",
       "domain": "feishu",
-      "heartbeat": {
-        "intervalMs": 7200000,
-        "visibility": "visible"
-      },
-      "appId": "cli_a955906a55389cd5",
-      "appSecret": "1bU2U0WZCdsrXQY5yN0l9cYEhBuVgwJ6",
+      "connectionMode": "websocket",
+      "defaultAccount": "main",
       "dmPolicy": "pairing",
       "groupPolicy": "open",
       "requireMention": true,
+      "resolveSenderNames": false,
       "accounts": {
-        "default": {},
+        "main": {
+          "appId": "cli_a955906a55389cd5",
+          "appSecret": "1bU2U0WZCdsrXQY5yN0l9cYEhBuVgwJ6",
+          "name": "主助手"
+        },
         "feishu_hanli": {
           "appId": "cli_a92dba56b339dbc6",
           "appSecret": "4Rz5rxSSSkOBPSYQkJ69agIpK0OJ4k2A",
@@ -278,6 +280,7 @@
     }
   },
   "plugins": {
+    "enabled": true,
     "entries": {
       "tavily": {
         "enabled": true,
@@ -292,6 +295,30 @@
       },
       "vllm": {
         "enabled": true
+      },
+      "memory-core": {
+        "enabled": true,
+        "config": {
+          "dreaming": {
+            "enabled": true,
+            "frequency": "0 0 * * *"
+          }
+        }
+      },
+      "active-memory": {
+        "enabled": true,
+        "config": {
+          "enabled": true,
+          "agents": ["main", "zcs", "hanli", "project_manager", "full_stack_engineer"],
+          "allowedChatTypes": ["direct"],
+          "modelFallback": "vllm/qwen3.5-9b",
+          "queryMode": "recent",
+          "promptStyle": "balanced",
+          "timeoutMs": 15000,
+          "maxSummaryChars": 220,
+          "persistTranscripts": false,
+          "logging": true
+        }
       },
       "openclaw-weixin": {
         "enabled": true
